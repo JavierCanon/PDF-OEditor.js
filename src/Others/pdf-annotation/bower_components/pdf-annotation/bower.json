@@ -1,0 +1,36 @@
+{
+  "name": "pdf-annotation",
+  "main": "pdf-annotation.js",
+  "homepage": "https://github.com/bjp232004/pdf-annotation",
+  "authors": [
+    "Bhargav <bjp232004@gmail.com>"
+  ],
+  "description": "PDF Annotation using canvas image rendering tool.",
+  "keywords": [
+    "PDF",
+    "Annotation",
+    "PDF",
+    "Annotation",
+    "Canvas",
+    "Square",
+    "Circle",
+    "Pencil",
+    "Ellipse",
+    "Undo",
+    "Redo",
+    "Line",
+    "Arrow"
+  ],
+  "dependencies": {
+      "angular": "~1.4.0"
+  },
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+	"**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

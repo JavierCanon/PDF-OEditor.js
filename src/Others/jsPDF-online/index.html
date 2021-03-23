@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>PDFJSAnnotate</title>
+        <link rel="stylesheet" type="text/css" href="shared/toolbar.css"/>
+        <link rel="stylesheet" type="text/css" href="shared/pdf_viewer.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <style type="text/css">
+    body {
+      background-color: #eee;
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    .pdfViewer .canvasWrapper {
+      box-shadow: 0 0 3px #bbb;
+    }
+    .pdfViewer .page {
+      margin-bottom: 10px;
+    }
+
+    .annotationLayer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    #content-wrapper {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      right: 250px;
+      bottom: 0;
+      overflow: auto;
+    }
+
+    #comment-wrapper {
+      position: absolute;
+      top: 35px;
+      right: 0;
+      bottom: 0;
+      overflow: auto;
+      width: 250px;
+      background: #eaeaea;
+      border-left: 1px solid #d0d0d0;
+    }
+    #comment-wrapper h4 {
+      margin: 10px;
+    }
+    #comment-wrapper .comment-list {
+      font-size: 12px;
+      position: absolute;
+      top: 38px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    #comment-wrapper .comment-list-item {
+      border-bottom: 1px solid #d0d0d0;
+      padding: 10px;
+    }
+    #comment-wrapper .comment-list-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 47px;
+      overflow: auto;
+    }
+    #comment-wrapper .comment-list-form {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 10px;
+    }
+    #comment-wrapper .comment-list-form input {
+      padding: 5px;
+      width: 100%;
+    }
+    .pdfViewer .page {
+      border-image: none;
+    }
+  </style>
+    </head>
+    <body>
+        <div class="toolbar">
+            
+            <button class="addPage" type="button" title="add page"><i class="fas fa-file-alt"></i></button>
+            <button class="addImage" type="button" title="add image"><i class="fas fa-file-image"></i></button>
+
+            <div class="spacer"></div>
+
+            <button class="delete" type="button" title="delete"><i class="fas fa-trash-alt"></i></button>
+
+            <div class="spacer"></div>
+
+            <button class="rotateBar" type="button" title="rotate bar"><i class="fas fa-angle-double-down"></i></button>
+
+            <div class="spacer"></div>
+
+            <button class="rotatePage" type="button" title="rotate page"><i class="fas fa-sync"></i></button>
+
+            <div class="spacer"></div>
+            <button class="undo" type="button" title="undo"><i class="fas fa-undo"></i></button>
+            <button class="redo" type="button" title="redo"><i class="fas fa-redo"></i></button>
+
+            <div class="spacer"></div>
+
+            <button class="previous" type="button" title="previous"><i class="fas fa-arrow-circle-left"></i></button>
+            <button class="next" type="button" title="next"><i class="fas fa-arrow-circle-right"></i></button>
+
+            <div class="spacer"></div>
+
+            <button class="view" type="button" title="view history"><i class="fas fa-history"></i></button>
+
+            <div class="spacer"></div>
+
+            <button class="underline" type="button" title="underline"><i class="fas fa-underline"></i></button>
+            <button class="high-light" type="button" title="highlight"><i class="fas fa-highlighter"></i></button>
+
+            <div class="spacer"></div>
+            <button class="save" type="button" title="save"><i class="fas fa-download"></i></button>
+
+        </div>
+
+        <div id="content-wrapper">
+            <div id="viewer" class="pdfViewer"></div>
+        </div>
+        <div id="comment-wrapper">
+            <h4>Comments</h4>
+            <div class="comment-list">
+                <div class="comment-list-container">
+                    <div class="comment-list-item">No comments</div>
+                </div>
+                <form class="comment-list-form" style="display:none;">
+                    <input type="text" placeholder="Add a Comment" />
+                </form>
+            </div>
+        </div>
+        <script src="shared/pdf.js"></script>
+        <script src="shared/pdf_viewer.js"></script>
+        <script src="js/index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
+        <!--
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+        -->
+        <script src="js/jspdf.min.js"></script>
+
+
+    </body>
+</html>

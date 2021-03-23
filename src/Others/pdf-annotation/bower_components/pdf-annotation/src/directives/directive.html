@@ -1,0 +1,62 @@
+<div id="controllers">
+    <!--<span class="controller btn" id="move">move</span>-->
+    <span class="controller btn btn-icn" id="pencil" title="Freehand Drawing"></span>
+    <span class="controller btn btn-icn" id="square" title="Square"></span>
+    <span class="controller btn btn-icn" id="circle" title="Circle"></span>
+    <span class="controller btn btn-icn" id="ellipse" title="Ellipse"></span>
+    <span class="controller btn btn-icn" id="text" title="Text"></span>
+    <span class="controller btn btn-icn" id="arrow" title="Arrow"></span>
+    <span class="controller btn btn-icn" id="line" title="Line"></span>
+    <span class="controller btn btn-icn" id="undo" title="Undo"></span>
+    <span class="controller btn btn-icn" id="redo" title="Redo"></span>
+    <span class="controller title" id="activePage" disabled="disabled"></span>&nbsp; out of&nbsp;<span class="controller title" id="totalPage" disabled="disabled"></span>
+    <span class="controller btn" id="prevBtn"><</span> &nbsp;<input type="text" class="pagenumber" name="currentPage" id="currentPage" />&nbsp;<span class="controller btn" id="nextBtn">></span>
+    <span class="controller btn btn-icn" id="save" title="Save"></span>
+    <br /><br />
+    <form id="frm_canvas_tool">
+        <input name="imageupload" id="imageupload" class="input_file" type="file" accept="image/*" >
+        <span class="controller btn" id="clear_image">Clear Image</span>
+    </form>
+    Font Size: <select id="fontsize" name="fontsize">
+    <option value="">-- Select Font Size--</option>
+    <option value="2">2px</option>
+    <option value="5">5px</option>
+    <option value="7">7px</option>
+    <option value="8">8px</option>
+    <option value="9">9px</option>
+    <option value="10">10px</option>
+    <option value="11">11px</option>
+    <option value="12">12px</option>
+    <option value="13">13px</option>
+    <option value="14">14px</option>
+    <option value="16">16px</option>
+    <option value="18">18px</option>
+    <option value="32">32px</option>
+</select>
+    Color: <select id="fillstyle" name="fillstyle">
+    <option>--Select Color--</option>
+    <option value="FF0000">Red</option>
+    <option value="00FF00">Green</option>
+    <option value="0000FF">Blue</option>
+    <option value="000000">Black</option>
+    <option value="FFFFFF">White</option>
+</select>
+    Line Width: <select id="linewidth" name="linewidth">
+    <option value="">-- Select Font Size--</option>
+    <option value="2">2px</option>
+    <option value="5">5px</option>
+    <option value="7">7px</option>
+    <option value="8">8px</option>
+</select>
+    <span class="controller" id="loading"></span>
+</div>
+<div id="canvas-container" class="canvas-container" style="visibility: hidden; height: 0px;">
+</div>
+<div id="canvas-cont" class="canvas-container">
+    <canvas id="canvas"></canvas>
+    <div id="editor_wrapper" style="display:none;">
+        <textarea id="contenteditor" rows="10"></textarea>
+    </div>
+
+</div>
+<div ng-if="errorURL"><h1>URL not found!</h1></div>

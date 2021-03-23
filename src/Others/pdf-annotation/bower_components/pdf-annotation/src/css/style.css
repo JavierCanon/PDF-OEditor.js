@@ -1,0 +1,121 @@
+#canvas {background-color:transparent;}
+body img {max-width: 28px;}
+#loading {background-color: #fff; color: #3e3e3e; font-weight: bold;}
+#controllers {font-size: 14px;
+    font-family: verdana;}
+#controllers {
+  width: 100%;
+  font-size: 0.8em;
+  color: #333;
+  position: relative;
+  top: 0px;
+  background-color: #fff;
+  border-bottom: 1px solid #cfcfcf;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+#paint {
+  border: 1px solid #000;
+  background: #fff;
+}
+.controller {
+  display: inline-block;
+  background: #eee;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: verdana;
+  text-transform: capitalize;
+  border-radius: 5px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+#canvas-cont{
+    width: 1300px;
+}
+.canvas-container{
+  height: 1600px;
+  overflow-y: auto;
+}
+#canvas{
+  border: 1px solid #000;
+}
+.controller:disabled {
+  background: red !important;
+}
+#controllers .pagenumber {
+  width: 45px;
+  line-height: 35px;
+}
+
+#controllers .btn:hover, #controllers .btn.active {
+  background-color: #0A0947;
+}
+#controllers .btn {
+  box-shadow: 0px 0px #0A0947;
+  cursor: pointer;
+  background-color:#0E86E2;
+  color: WHITE;
+}
+#controllers .title {
+  border: 1px solid #cfcfcf;  
+}
+#editor_wrapper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 25%;
+  height: 80px;
+  background-color: #3c3c3c;
+  float: right;
+}
+#contenteditor {
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#controllers .input_file {
+    display: inline;
+    border: 1px solid #3c3c3c;
+    padding: 10px;
+    border-radius: 3px;
+    height: 40px;
+}
+#frm_canvas_tool {
+    display: inline;
+}
+
+#controllers select {font-size: 18px;}
+
+span.btn-icn, span.btn-icn:hover {padding: 5px 10px; background-repeat: no-repeat; background-size: 40px; width: 21px; height: 31px;}
+#pencil {background-image: url(../images/icn-pencil.png); }
+#pencil:hover, #pencil.active {background-image: url(../images/icn-pencil-act.png); }
+
+#square {background-image: url(../images/icn-square.png); }
+#square:hover, #square.active {background-image: url(../images/icn-square-act.png); }
+
+#circle {background-image: url(../images/icn-circle.png); }
+#circle:hover, #circle.active {background-image: url(../images/icn-circle-act.png); }
+
+#ellipse {background-image: url(../images/icn-ellipse.png); }
+#ellipse:hover, #ellipse.active {background-image: url(../images/icn-ellipse-act.png); }
+
+#text {background-image: url(../images/icn-text.png); }
+#text:hover, #text.active {background-image: url(../images/icn-text-act.png); }
+
+#arrow {background-image: url(../images/icn-arrow.png); }
+#arrow:hover, #arrow.active {background-image: url(../images/icn-arrow-act.png); }
+
+#line {background-image: url(../images/icn-line.png); }
+#line:hover, #line.active {background-image: url(../images/icn-line-act.png); }
+
+#undo {background-image: url(../images/icn-undo-act.png); background-color: #0A0947 !important;}
+#undo:hover, #undo.active {background-image: url(../images/icn-undo-act.png); }
+
+#redo {background-image: url(../images/icn-redo-act.png); background-color: #0A0947 !important;}
+#redo:hover, #redo.active {background-image: url(../images/icn-redo-act.png); }
+
+#save {background-image: url(../images/icn-save.png); }
+#save:hover, #save.active {background-image: url(../images/icn-save-act.png); }
+
+.cur_disable{cursor: not-allowed !important;}
+#undo.cur_disable{background-image: url(../images/icn-undo.png); background-color: #0E86E2 !important;}
+#redo.cur_disable{background-image: url(../images/icn-redo.png); background-color: #0E86E2 !important;}

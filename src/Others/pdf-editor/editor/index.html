@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jsPDF Editor</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body > * {
+            position: absolute;
+        }
+
+        #editor {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #preview {
+            top: 20px;
+            right: 20px;
+            width: 630px;
+            height: 891px;
+            background: #fff;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div id="editor">
+        // Press Ctrl-S / Command-S to render
+        var doc = new PDFDocument();
+
+        // draw some text
+        doc.fontSize(25)
+        .text('Here is some vector graphics...', 100, 80);
+
+        // some vector graphics
+        doc.save()
+        .moveTo(100, 150)
+        .lineTo(100, 250)
+        .lineTo(200, 250)
+        .fill("#FF3300");
+
+        doc.circle(280, 200, 50)
+        .fill("#6600FF");
+
+        // an SVG path
+        doc.scale(0.6)
+        .translate(470, 130)
+        .path('M 250,75 L 323,301 131,161 369,161 177,301 z')
+        .fill('red', 'even-odd')
+        .restore();
+
+        // and some justified text wrapped into columns
+        doc.text('And here is some wrapped text...', 100, 300)
+        .font('Times-Roman', 13)
+        .moveDown()
+        .text('lorem...', {
+        width: 412,
+        align: 'justify',
+        indent: 30,
+        columns: 2,
+        height: 300,
+        ellipsis: true
+        });
+    </div>
+    <canvas id="preview"></canvas>
+
+    <script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js"></script>
+    <script>
+        // init editor
+        editor = ace.edit("editor");
+        editor.setTheme("ace/theme/twilight");
+        editor.getSession().setMode("ace/mode/javascript");
+
+        editor.commands.addCommand({
+            name: 'saveFile',
+            bindKey: {
+                win: 'Ctrl-S',
+                mac: 'Command-S',
+                sender: 'editor|cli'
+            },
+            exec: function (env, args, request) {
+                var code = editor.getSession().getValue();
+
+                eval(code);
+
+                // doc is now available.
+                // end and display the document in the iframe to the right
+                var stream = doc.pipe(blobStream());
+                doc.end();
+                stream.on('finish', function () {
+                    var blob = stream.toBlobURL('application/pdf');
+
+                    PDFJS.getDocument(blob).then(function (pdf) {
+                        pdf.getPage(1).then(function (page) {
+                            var scale = 1;
+                            var viewport = page.getViewport(scale);
+
+                            //
+                            // Prepare canvas using PDF page dimensions
+                            //
+                            var canvas = document.getElementById('preview');
+                            var context = canvas.getContext('2d');
+                            canvas.height = viewport.height;
+                            canvas.width = viewport.width;
+
+                            //
+                            // Render PDF page into canvas context
+                            //
+                            var renderContext = {
+                                canvasContext: context,
+                                viewport: viewport
+                            };
+                            page.render(renderContext);
+                        });
+                    });
+                });
+            }
+        }
+        );
+
+        // http://stackoverflow.com/questions/12092633/pdf-js-rendering-a-pdf-file-using-a-base64-file-source-instead-of-url
+        var BASE64_MARKER = ';base64,';
+
+        function convertDataURIToBinary(dataURI) {
+            var base64Index = dataURI.indexOf(BASE64_MARKER) + BASE64_MARKER.length;
+            var base64 = dataURI.substring(base64Index);
+            var raw = window.atob(base64);
+            var rawLength = raw.length;
+            var array = new Uint8Array(new ArrayBuffer(rawLength));
+
+            for (i = 0; i < rawLength; i++) {
+                array[i] = raw.charCodeAt(i);
+            }
+            return array;
+        }
+    </script>
+
+    <!-- pdf.js shizzle -->
+    <script src="./vendor/pdf.js"></script>
+    <script src="./node_modules.js"></script>
+</body>
+</html>

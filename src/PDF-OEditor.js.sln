@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "docs", "..\docs\", "{01029AA9-0AD8-4B23-A118-6C7D7503CA05}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51612"
+		Debug.AspNetCompiler.PhysicalPath = "..\docs\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51612\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51612"
+		Release.AspNetCompiler.PhysicalPath = "..\docs\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51612\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51612"
+		SlnRelativePath = "..\docs\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{AFC3758E-3EAC-4468-B957-A46F20B78173}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDF-OEditor.js.HTML5", "PDF-OEditor.js.HTML5\PDF-OEditor.js.HTML5.csproj", "{F249E0F7-32C3-43CA-ADFF-DB06B620C6C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94A92CC7-2172-4743-95D1-4F066AAC1D0A}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE.md = ..\LICENSE.md
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01029AA9-0AD8-4B23-A118-6C7D7503CA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01029AA9-0AD8-4B23-A118-6C7D7503CA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01029AA9-0AD8-4B23-A118-6C7D7503CA05}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{01029AA9-0AD8-4B23-A118-6C7D7503CA05}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F249E0F7-32C3-43CA-ADFF-DB06B620C6C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F249E0F7-32C3-43CA-ADFF-DB06B620C6C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F249E0F7-32C3-43CA-ADFF-DB06B620C6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F249E0F7-32C3-43CA-ADFF-DB06B620C6C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F249E0F7-32C3-43CA-ADFF-DB06B620C6C1} = {AFC3758E-3EAC-4468-B957-A46F20B78173}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C6F7850-E49E-4CE8-804B-D968F7B06315}
+	EndGlobalSection
+EndGlobal
